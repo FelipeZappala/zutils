@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+
+# Other Files #
+.DS_Store
+/bin/*
