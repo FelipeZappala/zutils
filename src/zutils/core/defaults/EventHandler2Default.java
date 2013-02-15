@@ -3,16 +3,16 @@ package zutils.core.defaults;
 import java.util.LinkedList;
 import java.util.List;
 
-import zutils.Func;
+import zutils.Function;
 import zutils.core.EventHandler2;
 
 public class EventHandler2Default implements EventHandler2 {
 
 	private Object target;
-	private List<Func> observers;
+	private List<Function> observers;
 	
 	public EventHandler2Default() {
-		this.observers = new LinkedList<Func>();
+		this.observers = new LinkedList<Function>();
 		this.target = new Object();
 	}
 	
@@ -21,18 +21,18 @@ public class EventHandler2Default implements EventHandler2 {
 		return this;
 	}
 
-	public EventHandler2 add(Func observer) {
+	public EventHandler2 add(Function observer) {
 		this.observers.add(observer);
 		return this;
 	}
 
-	public EventHandler2 remove(Func observer) {
+	public EventHandler2 remove(Function observer) {
 		this.observers.remove(observer);
 		return this;
 	}
 
 	public EventHandler2 notify(Object observable, Object... parameters) {
-		for (Func observer : observers) {
+		for (Function observer : observers) {
 			observer.params.set(observable);
 			observer.params.set("observable", observable);
 			observer.params.set("event", target);

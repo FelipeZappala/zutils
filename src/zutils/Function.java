@@ -1,11 +1,11 @@
 package zutils;
 
-public abstract class Func implements Runnable {
+public abstract class Function implements Runnable {
 
 	public final Parameters results;
 	public final Parameters params;
 	
-	public Func() {
+	public Function() {
 		this.results = new Parameters();
 		this.params = new Parameters();
 	}

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="MacZap.local" name="zutils.ZUtilsTest" tests="17" time="0.094" timestamp="2013-02-15T01:56:44">
+  <properties>
+    <property name="java.vendor" value="Apple Inc." />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="jikes.class.path" value=":/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/alt-rt.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/alt-string.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/charsets.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/classes.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/dt.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/jconsole.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/management-agent.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/ui.jar" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="ant.file.ZUtils" value="/Users/zappala/Desktop/workzap/ZUtils/build.xml" />
+    <property name="env.GREP_OPTIONS" value="--color=auto" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar" />
+    <property name="env.TMPDIR" value="/var/folders/8b/twxl65kd5dnf5wgzvnw337700000gn/T/" />
+    <property name="env.Apple_Ubiquity_Message" value="/tmp/launch-3BRbI1/Apple_Ubiquity_Message" />
+    <property name="env.PWD" value="/Users/zappala/Desktop/workzap/ZUtils" />
+    <property name="env.LANG" value="pt_BR.UTF-8" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.home" value="/usr/share/ant" />
+    <property name="java.runtime.version" value="1.6.0_37-b06-434-11M3909" />
+    <property name="env.Apple_PubSub_Socket_Render" value="/tmp/launch-M3XWVl/Render" />
+    <property name="env.DISPLAY" value="/tmp/launch-bFi3Zd/org.macosforge.xquartz:0" />
+    <property name="user.name" value="zappala" />
+    <property name="env.USER" value="zappala" />
+    <property name="env.SHELL" value="/bin/bash" />
+    <property name="env.__CF_USER_TEXT_ENCODING" value="0x1F5:0:71" />
+    <property name="awt.nativeDoubleBuffering" value="true" />
+    <property name="env.PATH" value="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin" />
+    <property name="user.language" value="pt" />
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries" />
+    <property name="ant.project.default-target" value="build" />
+    <property name="ant.project.name" value="ZUtils" />
+    <property name="java.version" value="1.6.0_37" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed" />
+    <property name="env.JAVA_MAIN_CLASS_885" value="org.apache.tools.ant.launch.Launcher" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="MacRoman" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="env.SHLVL" value="1" />
+    <property name="ant.file.type.ZUtils" value="file" />
+    <property name="ECLIPSE_HOME" value="../../../../../Applications/Development/eclipse" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="user.country" value="BR" />
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.LOGNAME" value="zappala" />
+    <property name="ant.file" value="/Users/zappala/Desktop/workzap/ZUtils/build.xml" />
+    <property name="os.version" value="10.8.2" />
+    <property name="env.TERM_PROGRAM_VERSION" value="309" />
+    <property name="env.CLICOLOR" value="auto" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="20.12-b01-434" />
+    <property name="ant.library.dir" value="/usr/share/ant/lib" />
+    <property name="junit.output.dir" value="junit" />
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob" />
+    <property name="env.TERM" value="xterm-256color" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="apple.awt.CToolkit" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="env.GREP_COLOR" value="4;33" />
+    <property name="user.home" value="/Users/zappala" />
+    <property name="target" value="1.5" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="env.TERM_PROGRAM" value="Apple_Terminal" />
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="java.vendor.url" value="http://www.apple.com/" />
+    <property name="java.vm.vendor" value="Apple Inc." />
+    <property name="gopherProxySet" value="false" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on June 20 2012" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner zutils.ZUtilsTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/zappala/Desktop/workzap/ZUtils/junit/TEST-zutils.ZUtilsTest.xml crashfile=/Users/zappala/Desktop/workzap/ZUtils/junitvmwatcher5194659781602862123.properties propsfile=/Users/zappala/Desktop/workzap/ZUtils/junit6485530228175947240.properties" />
+    <property name="java.class.path" value="/Users/zappala/Desktop/workzap/ZUtils/bin:/Applications/Development/eclipse/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar:/Applications/Development/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar:/usr/share/java/ant-1.8.2/lib/ant-launcher.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar" />
+    <property name="env.TERM_SESSION_ID" value="2058CB92-6D58-4EB9-875D-93A84C65C4BC" />
+    <property name="env.com.apple.java.jvmMode" value="client" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="env.HOME" value="/Users/zappala" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="java.io.tmpdir" value="/var/folders/8b/twxl65kd5dnf5wgzvnw337700000gn/T/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/" />
+    <property name="env.SSH_AUTH_SOCK" value="/tmp/launch-DzuluT/Listeners" />
+    <property name="env.COMMAND_MODE" value="unix2003" />
+    <property name="mrj.build" value="11M3909" />
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment" />
+    <property name="os.arch" value="x86_64" />
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext" />
+    <property name="env.com.apple.java.jvmTask" value="CommandLine_Manual.java" />
+    <property name="mrj.version" value="1070.1.6.0_37-434" />
+    <property name="user.dir" value="/Users/zappala/Desktop/workzap/ZUtils" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/Users/zappala/Desktop/workzap/ZUtils" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+    <property name="source" value="1.5" />
+    <property name="file.encoding" value="MacRoman" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="ant.project.invoked-targets" value="ZUtilsTest" />
+  </properties>
+  <testcase classname="zutils.ZUtilsTest" name="deveriaTerObjeto" time="0.011" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaTerTresObjeto" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaConverterStringParaInteiro" time="0.0010" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaConverterInteiroParaString" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaConverterInteiroParaStringEstaticamente" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaConverterStringParaInteiroEstaticamente" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaCriarUmObjetoRegistradoNaFabrica" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaCriarUmObjetoRegistradoNaFabricaComParametros" time="0.0010" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaIterarElementos" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaEnumerarElementos" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaSerVazio" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaNaoSerVazio" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaLoggarObjetosEstatico" time="0.0090" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaLoggarObjetosInstancia" time="0.0" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaExecutarForEach" time="0.0010" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaRegistrarENotificarEventos" time="0.0010" />
+  <testcase classname="zutils.ZUtilsTest" name="deveriaRegistrarENotificarEventosClasse2" time="0.0020" />
+  <system-out><![CDATA[clicou!!! zutils.ZUtilsTest@510dc6b5 - teste
+class zutils.ZUtils
+zutils.ZUtilsTest@510dc6b5
+]]></system-out>
+  <system-err><![CDATA[14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: 123, Funcionando em: 55
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: Fim...
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: Ola mundo, crueu ;-( 
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: index[0] = 1
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: index[1] = 2
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: index[2] = 3
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: index[3] = 4
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: Ocorreu um click! Vindo de : zutils.ZUtilsTest@1de4f7c2
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: Gerador: mouse
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: Outro observer...
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: null
+14/02/2013 23:56:44 zutils.core.defaults.LogHandlerDefault log
+INFO: 666
+]]></system-err>
+</testsuite>

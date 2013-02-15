@@ -49,7 +49,7 @@ class ZutilsDefault extends ZUtils {
 	}
 
 	@Override
-	public ZUtils each(Func function) {
+	public ZUtils each(Function function) {
 		if (function != null && !this.elements.isEmpty()) {
 			int counter = 0;
 			for (Object element : elements) {

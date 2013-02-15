@@ -1,6 +1,6 @@
 package zutils.core;
 
-import zutils.Func;
+import zutils.Function;
 
 
 public interface EventHandler {
@@ -9,7 +9,7 @@ public interface EventHandler {
 	
 	EventHandler remove(String name);
 
-	EventHandler observer(String name, Func funcion);
+	EventHandler observer(String name, Function funcion);
 	
 	EventHandler notify(String name, Object... parameters);
 	

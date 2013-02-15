@@ -104,16 +104,6 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="FT">
-        <java classname="zutils.nonon.FT" failonerror="true" fork="yes">
-            <classpath refid="ZUtils.classpath"/>
-        </java>
-    </target>
-    <target name="FuncTest">
-        <java classname="zutils.FuncTest" failonerror="true" fork="yes">
-            <classpath refid="ZUtils.classpath"/>
-        </java>
-    </target>
     <target name="ZUtilsTest">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">

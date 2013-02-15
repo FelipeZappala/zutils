@@ -34,13 +34,13 @@ public class ZUtilsTest {
 		
 		Date data = ZUtils.factory().register(Date.class, Date.class).create(Date.class);
 		
-		ZUtils.from("foo", "bar").each(new Func() {
+		ZUtils.from("foo", "bar").each(new Function() {
 			public void run() {
 				results.set(params.get());
 			}
 		});
 		
-		ZUtils.from("foo", "bar").each(new Func() {
+		ZUtils.from("foo", "bar").each(new Function() {
 			public void run() {
 				//TODO:...
 			}
@@ -154,7 +154,7 @@ public class ZUtilsTest {
 	
 	@Test
 	public void deveriaExecutarForEach() {
-		ZUtils.from(1, 2, 3, 4).each(new Func() {
+		ZUtils.from(1, 2, 3, 4).each(new Function() {
 			public void run() {
 				ZUtils.log("index[", params.get("index"), "] = ", params.get());
 			}
@@ -163,12 +163,12 @@ public class ZUtilsTest {
 	
 	@Test
 	public void deveriaRegistrarENotificarEventos() {
-		ZUtils.events().add("click", this).observer("click", new Func() {
+		ZUtils.events().add("click", this).observer("click", new Function() {
 			public void run() {
 				ZUtils.log("Ocorreu um click!", " Vindo de : ", params.get("observable"));
 				ZUtils.log("Gerador: ", params.get(0));
 			}
-		}).observer("click", new Func() {
+		}).observer("click", new Function() {
 			public void run() {
 				ZUtils.log("Outro observer...");
 			}
@@ -179,7 +179,7 @@ public class ZUtilsTest {
 	@Test
 	public void deveriaRegistrarENotificarEventosClasse2() {
 		// notifica por nome
-		ZUtils.event("click").add(new Func() {
+		ZUtils.event("click").add(new Function() {
 			public void run() {
 				System.out.println("clicou!!! " + params.get() + " - " + params.get(0));
 			}
@@ -189,7 +189,7 @@ public class ZUtilsTest {
 		
 		
 		// notifica por classe
-		ZUtils.event(ZUtils.class).add(new Func() {
+		ZUtils.event(ZUtils.class).add(new Function() {
 			public void run() {
 				ZUtils.log(params.get());
 				System.out.println(params.get("event"));
@@ -198,7 +198,7 @@ public class ZUtilsTest {
 		
 		
 		// notifica por instancia
-		ZUtils.event(this).add(new Func() {
+		ZUtils.event(this).add(new Function() {
 			public void run() {
 				ZUtils.log(params.get(0));
 				System.out.println(params.get("event"));

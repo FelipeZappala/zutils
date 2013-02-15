@@ -92,7 +92,7 @@ public abstract class ZUtils {
 	
 	public abstract Enumeration<?> enumerator();
 	
-	public abstract ZUtils each(Func function);
+	public abstract ZUtils each(Function function);
 	
 	public abstract ConversionHandler convert();
 	
@@ -121,7 +121,7 @@ public abstract class ZUtils {
 		return eventSender(clazz);
 	}
 	
-	public static ThreadHandler run(Func function) {
+	public static ThreadHandler run(Function function) {
 		return factory().create(ThreadHandler.class).run(function);
 	}
 }
