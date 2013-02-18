@@ -4,6 +4,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.logging.Level;
 
 import zutils.core.ConversionHandler;
 import zutils.core.EventHandler;
@@ -68,6 +69,14 @@ public abstract class ZUtils {
 		return factory().create(LogHandler.class).log(objects);
 	}
 	
+	public static LogHandler log(Level level, Object... objects) {
+		return factory().create(LogHandler.class).log(level, objects);
+	}
+	
+	public static LogHandler log(Throwable error, Object... objects) {
+		return factory().create(LogHandler.class).log(error, objects);
+	}
+	
 	public static ExceptionHandler errors() {
 		return factory().create(ExceptionHandler.class);
 	}
@@ -97,6 +106,8 @@ public abstract class ZUtils {
 	public abstract ConversionHandler convert();
 	
 	public abstract ZUtils log();
+	
+	public abstract ZUtils log(Level level);
 
 	
 	private static Map<Object, EventHandler2> events = new HashMap<Object, EventHandler2>();

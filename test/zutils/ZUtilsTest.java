@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Handler;
+import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
@@ -118,7 +119,25 @@ public class ZUtilsTest {
 		assertTrue(results.contains("123, Funcionando em: 55"));
 		assertTrue(results.contains("Fim..."));
 	}
+	
+	@Test
+	public void deveriaLoggarObjetosEErros() {
+		List<String> results = setupLogger();
+		
+		ZUtils.log(new Exception("Excecao"), "Excecao ", 123);
+		
+		assertTrue(results.contains("Excecao 123"));
+	}
 
+	@Test
+	public void deveriaLoggarObjetosEmLevelINFO() {
+		List<String> results = setupLogger();
+		
+		ZUtils.log(Level.INFO, "Level.", "INFO");
+		
+		assertTrue(results.contains("Level.INFO"));
+	}
+	
 	@Test
 	public void deveriaLoggarObjetosInstancia() {
 		List<String> results = setupLogger();
