@@ -1,6 +1,5 @@
 package zutils.core.defaults;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import zutils.core.LogHandler;
@@ -22,12 +21,31 @@ class LogHandlerDefault implements LogHandler {
 			}
 			
 			if (error != null) {
-				logger.log(Level.SEVERE, sb.toString(), error);
+				logger.log(getLoggerLevel(level), sb.toString(), error);
 			} else {
-				logger.log(level, sb.toString());
+				logger.log(getLoggerLevel(level), sb.toString());
 			}
 		}
 		return this;
+	}
+
+	private static java.util.logging.Level getLoggerLevel(Level level) {
+		switch (level) {
+			case INFO:
+				return java.util.logging.Level.INFO;
+				
+			case DEBUG:
+				return java.util.logging.Level.INFO;
+	
+			case WARN:
+				return java.util.logging.Level.INFO;
+			
+			case ERROR:
+				return java.util.logging.Level.SEVERE;
+				
+			default:
+				return java.util.logging.Level.INFO;
+		}
 	}
 
 	public LogHandler log(Object... objects) {
@@ -39,7 +57,7 @@ class LogHandlerDefault implements LogHandler {
 	}
 
 	public LogHandler log(Throwable error, Object... objects) {
-		return log(Level.SEVERE, error, objects);
+		return log(Level.ERROR, error, objects);
 	}
 
 }

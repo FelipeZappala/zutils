@@ -1,9 +1,11 @@
 package zutils.core;
 
-import java.util.logging.Level;
-
 public interface LogHandler {
-
+	
+	enum Level {
+		INFO, DEBUG, WARN, ERROR, NONE, ALL
+	}
+	
 	LogHandler log(Object... objects);
 	
 	LogHandler log(Level level, Object... objects);

@@ -10,13 +10,13 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Handler;
-import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import org.junit.Test;
 
 import zutils.ZUtils.Plugin;
+import zutils.core.LogHandler;
 
 public class ZUtilsTest {
 
@@ -130,12 +130,12 @@ public class ZUtilsTest {
 	}
 
 	@Test
-	public void deveriaLoggarObjetosEmLevelINFO() {
+	public void deveriaLoggarObjetosEmLevelDEBUG() {
 		List<String> results = setupLogger();
 		
-		ZUtils.log(Level.INFO, "Level.", "INFO");
+		ZUtils.log(LogHandler.Level.DEBUG, "Level.", "DEBUG");
 		
-		assertTrue(results.contains("Level.INFO"));
+		assertTrue(results.contains("Level.DEBUG"));
 	}
 	
 	@Test

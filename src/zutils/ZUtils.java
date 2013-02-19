@@ -4,7 +4,6 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.logging.Level;
 
 import zutils.core.ConversionHandler;
 import zutils.core.EventHandler;
@@ -18,6 +17,8 @@ import zutils.core.defaults.FactoryHanderDefault;
 
 public abstract class ZUtils {
 
+	// User para fazer chaves que se apagam sozinhas com o tempo
+				// java.util.WeakHashMap<K, V>
 	
 	interface IPlugin {
 		void doing();
@@ -69,7 +70,7 @@ public abstract class ZUtils {
 		return factory().create(LogHandler.class).log(objects);
 	}
 	
-	public static LogHandler log(Level level, Object... objects) {
+	public static LogHandler log(LogHandler.Level level, Object... objects) {
 		return factory().create(LogHandler.class).log(level, objects);
 	}
 	
@@ -107,7 +108,7 @@ public abstract class ZUtils {
 	
 	public abstract ZUtils log();
 	
-	public abstract ZUtils log(Level level);
+	public abstract ZUtils log(LogHandler.Level level);
 
 	
 	private static Map<Object, EventHandler2> events = new HashMap<Object, EventHandler2>();

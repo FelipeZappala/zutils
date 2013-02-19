@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
 
 import zutils.core.ConversionHandler;
 import zutils.core.LogHandler;
@@ -50,7 +49,7 @@ class ZutilsDefault extends ZUtils {
 	}
 	
 	@Override
-	public ZUtils log(Level level) {
+	public ZUtils log(LogHandler.Level level) {
 		ZUtils.factory().create(LogHandler.class).log(level, elements.toArray());
 		
 		return this;
