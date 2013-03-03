@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zutils.core.ConversionHandler;
+import zutils.core.functions.Function;
+import zutils.core.functions.Function0;
 
 class ConversionHandlerDefault implements ConversionHandler {
 

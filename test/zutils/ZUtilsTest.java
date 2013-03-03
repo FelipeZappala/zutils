@@ -198,7 +198,7 @@ public class ZUtilsTest {
 	@Test
 	public void deveriaRegistrarENotificarEventosClasse2() {
 		// notifica por nome
-		ZUtils.event("click").add(new Function() {
+		ZUtils.event("click").bind(new Function() {
 			public void run() {
 				System.out.println("clicou!!! " + params.get() + " - " + params.get(0));
 			}
@@ -208,7 +208,7 @@ public class ZUtilsTest {
 		
 		
 		// notifica por classe
-		ZUtils.event(ZUtils.class).add(new Function() {
+		ZUtils.event(ZUtils.class).bind(new Function() {
 			public void run() {
 				ZUtils.log(params.get());
 				System.out.println(params.get("event"));
@@ -217,7 +217,7 @@ public class ZUtilsTest {
 		
 		
 		// notifica por instancia
-		ZUtils.event(this).add(new Function() {
+		ZUtils.event(this).bind(new Function() {
 			public void run() {
 				ZUtils.log(params.get(0));
 				System.out.println(params.get("event"));

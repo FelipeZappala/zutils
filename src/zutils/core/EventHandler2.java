@@ -4,9 +4,9 @@ import zutils.Function;
 
 public interface EventHandler2 {
 
-	EventHandler2 event(Object target);
+	EventHandler2 on(Object target);
 	
-	EventHandler2 add(Function observer);
+	EventHandler2 bind(Function observer);
 	
 	EventHandler2 remove(Function observer);
 	

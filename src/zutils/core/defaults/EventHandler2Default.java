@@ -16,12 +16,12 @@ public class EventHandler2Default implements EventHandler2 {
 		this.target = new Object();
 	}
 	
-	public EventHandler2 event(Object target) {
+	public EventHandler2 on(Object target) {
 		this.target = target;
 		return this;
 	}
 
-	public EventHandler2 add(Function observer) {
+	public EventHandler2 bind(Function observer) {
 		this.observers.add(observer);
 		return this;
 	}

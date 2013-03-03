@@ -116,7 +116,7 @@ public abstract class ZUtils {
 	
 	private static EventHandler2 eventSender(Object target) {
 		if (!events.containsKey(target)) {
-			events.put(target, new EventHandler2Default().event(target));
+			events.put(target, new EventHandler2Default().on(target));
 		}
 		return events.get(target);
 	}
