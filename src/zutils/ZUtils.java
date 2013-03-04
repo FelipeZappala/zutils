@@ -86,8 +86,12 @@ public abstract class ZUtils {
 		return factory().create(EventHandler.class);
 	}
 	
+	public static ThreadHandler theads() {
+		return factory().create(ThreadHandler.class);
+	}
+	
 	public static ThreadHandler run(Function function) {
-		return factory().create(ThreadHandler.class).run(function);
+		return factory().create(ThreadHandler.class).execute(function);
 	}
 	
 	// 

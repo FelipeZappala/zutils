@@ -172,6 +172,40 @@ public class ZUtilsTest {
 	}
 	
 	@Test
+	public void deveriaExecutarEmThreadEProsseguir() {
+		ZUtils.log("ThreadPricipal Iniciou: ", Thread.currentThread().toString());
+		
+		ZUtils.theads().execute(new Function() {
+			public void run() {
+				ZUtils.log("ThreadFunction: ", Thread.currentThread().toString());
+			}
+		}).execute(new Runnable() {			
+			public void run() {
+				ZUtils.log("ThreadRunnable: ", Thread.currentThread().toString());
+			}
+		});
+		
+		ZUtils.log("ThreadPricipal Finalizou: ", Thread.currentThread().toString());
+	}
+	
+	@Test
+	public void deveriaExecutarEmThreadEAguardar() {
+		ZUtils.log("ThreadPricipal Iniciou: ", Thread.currentThread().toString());
+		
+		ZUtils.theads().await(new Function() {
+			public void run() {
+				ZUtils.log("ThreadFunction: ", Thread.currentThread().toString());
+			}
+		}).await(new Runnable() {			
+			public void run() {
+				ZUtils.log("ThreadRunnable: ", Thread.currentThread().toString());
+			}
+		});
+		
+		ZUtils.log("ThreadPricipal Finalizou: ", Thread.currentThread().toString());
+	}
+	
+	@Test
 	public void deveriaExecutarForEach() {
 		ZUtils.from(1, 2, 3, 4).each(new Function() {
 			public void run() {

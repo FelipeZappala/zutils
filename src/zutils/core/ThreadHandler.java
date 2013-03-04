@@ -1,9 +1,9 @@
 package zutils.core;
 
-import zutils.Function;
-
 public interface ThreadHandler {
- //TODO pool...
 	
-	ThreadHandler run(Function function);
+	ThreadHandler execute(Runnable function);
+	
+	ThreadHandler await(Runnable function);
+	
 }

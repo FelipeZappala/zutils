@@ -9,6 +9,7 @@ import zutils.core.ConversionHandler;
 import zutils.core.EventHandler;
 import zutils.core.FactoryHander;
 import zutils.core.LogHandler;
+import zutils.core.ThreadHandler;
 import zutils.core.exceptions.ZUtilsException;
 
 public final class FactoryHanderDefault implements FactoryHander {
@@ -22,6 +23,7 @@ public final class FactoryHanderDefault implements FactoryHander {
 		register(ConversionHandler.class, ConversionHandlerDefault.class);
 		register(LogHandler.class, LogHandlerDefault.class);
 		register(EventHandler.class, EventHandlerDefault.class);
+		register(ThreadHandler.class, ThreadHandlerDefault.class);
 	}
 	
 	
