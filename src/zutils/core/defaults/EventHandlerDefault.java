@@ -10,37 +10,42 @@ import zutils.core.EventHandler;
 
 public class EventHandlerDefault implements EventHandler {
 
-	private Map<String, Object> events;
-	private Map<String, List<Function>> observers;
+	private Map<String, List<Function>> events;
 	
 	public EventHandlerDefault() {
-		events = new HashMap<String, Object>();
-		observers = new HashMap<String, List<Function>>();
+		events = new HashMap<String, List<Function>>();
 	}
-
-	public EventHandler add(String name, Object notifier) {
-		events.put(name, notifier);
-		return this;
-	}
-
-	public EventHandler remove(String name) {
-		events.remove(name);
-		return this;
-	}
-
-	public EventHandler observer(String name, Function funcion) {
-		if (!observers.containsKey(name)) 
-			observers.put(name, new LinkedList<Function>());
+	
+	private List<Function> event(String name) {
+		if (!events.containsKey(name)) 
+			events.put(name, new LinkedList<Function>());
 		
-		observers.get(name).add(funcion);
-			
+		return events.get(name);
+	}
+
+	public EventHandler bind(String name, Function funcion) {
+		event(name).add(funcion);
+		
 		return this;
 	}
+
+	public EventHandler unbind(String name) {
+		events.remove(name);
+		
+		return this;
+	}
+
+	public EventHandler unbind(String name, Function funcion) {
+		event(name).remove(funcion);
+		
+		return this;
+	}
+	
 
 	public EventHandler notify(String name, Object... parameters) {
 		if (events.containsKey(name)) {
-			for (Function observer : observers.get(name)) {
-				observer.params.set("observable", events.get(name));
+			for (Function observer : events.get(name)) {
+				observer.params.set(name);
 				
 				int i = 0;
 				for (Object object : parameters) {
@@ -52,6 +57,5 @@ public class EventHandlerDefault implements EventHandler {
 		}
 		return this;
 	}
-	
 	
 }

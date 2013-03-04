@@ -1,18 +1,14 @@
 package zutils;
 
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 import zutils.core.ConversionHandler;
 import zutils.core.EventHandler;
-import zutils.core.EventHandler2;
 import zutils.core.ExceptionHandler;
 import zutils.core.FactoryHander;
 import zutils.core.LogHandler;
 import zutils.core.ThreadHandler;
-import zutils.core.defaults.EventHandler2Default;
 import zutils.core.defaults.FactoryHanderDefault;
 
 public abstract class ZUtils {
@@ -25,7 +21,9 @@ public abstract class ZUtils {
 	}
 	
 	class Plugin implements IPlugin {
-		public void faz() {}
+		public void faz() {
+			//
+		}
 
 		public void doing() {
 			// TODO Auto-generated method stub
@@ -49,10 +47,12 @@ public abstract class ZUtils {
 	
 	// http://www.javacodegeeks.com/2011/04/java-generics-quick-tutorial.html
 	public static <P extends IPlugin> P plugin(String clazz) {
+		clazz.isEmpty();
 		return null;
 	}
 	
 	public static <P extends IPlugin> P plugin(Class<P> clazz) {
+		clazz.isAnonymousClass();
 		return null;
 	}
 
@@ -86,6 +86,10 @@ public abstract class ZUtils {
 		return factory().create(EventHandler.class);
 	}
 	
+	public static ThreadHandler run(Function function) {
+		return factory().create(ThreadHandler.class).run(function);
+	}
+	
 	// 
 	// Instance methods ////////////////////////////////////
 	//
@@ -109,31 +113,5 @@ public abstract class ZUtils {
 	public abstract ZUtils log();
 	
 	public abstract ZUtils log(LogHandler.Level level);
-
-	
-	private static Map<Object, EventHandler2> events = new HashMap<Object, EventHandler2>();
-	
-	
-	private static EventHandler2 eventSender(Object target) {
-		if (!events.containsKey(target)) {
-			events.put(target, new EventHandler2Default().on(target));
-		}
-		return events.get(target);
-	}
-	
-	public static EventHandler2 event(Object instance) {
-		return eventSender(instance);
-	}
-	
-	public static EventHandler2 event(String name) {
-		return eventSender(name);
-	}
-	
-	public static EventHandler2 event(Class<?> clazz) {
-		return eventSender(clazz);
-	}
-	
-	public static ThreadHandler run(Function function) {
-		return factory().create(ThreadHandler.class).run(function);
-	}
+		
 }

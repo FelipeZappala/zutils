@@ -182,19 +182,19 @@ public class ZUtilsTest {
 	
 	@Test
 	public void deveriaRegistrarENotificarEventos() {
-		ZUtils.events().add("click", this).observer("click", new Function() {
+		ZUtils.events().bind("click", new Function() {
 			public void run() {
-				ZUtils.log("Ocorreu um click!", " Vindo de : ", params.get("observable"));
-				ZUtils.log("Gerador: ", params.get(0));
+				ZUtils.log("Ocorreu um click!", " Vindo de : ", params.get());
+				ZUtils.log("Gerador: ", this.params.get(0));
 			}
-		}).observer("click", new Function() {
+		}).bind("click", new Function() {
 			public void run() {
-				ZUtils.log("Outro observer...");
+				ZUtils.log("Outro observer... ", params.get());
 			}
-		}).notify("click", "mouse");
+		}).notify("click", "mouse").notify("none", "mouse");
 	}
 	
-	
+	/*
 	@Test
 	public void deveriaRegistrarENotificarEventosClasse2() {
 		// notifica por nome
@@ -227,5 +227,6 @@ public class ZUtilsTest {
 		ZUtils.event(this).notify(null, 666);
 		
 	}
+	*/
 	
 }

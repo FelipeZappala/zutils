@@ -5,11 +5,11 @@ import zutils.Function;
 
 public interface EventHandler {
 	
-	EventHandler add(String name, Object notifier);
+	EventHandler bind(String name, Function funcion);
 	
-	EventHandler remove(String name);
-
-	EventHandler observer(String name, Function funcion);
+	EventHandler unbind(String name);
+	
+	EventHandler unbind(String name, Function funcion);
 	
 	EventHandler notify(String name, Object... parameters);
 	
