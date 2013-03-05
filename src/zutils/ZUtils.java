@@ -1,7 +1,9 @@
 package zutils;
 
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import zutils.core.ConversionHandler;
 import zutils.core.EventHandler;
@@ -15,6 +17,12 @@ public abstract class ZUtils {
 
 	// User para fazer chaves que se apagam sozinhas com o tempo
 				// java.util.WeakHashMap<K, V>
+	
+	private static ZUtils currentInstance;
+	
+	public static ZUtils current() {
+		return currentInstance;
+	}
 	
 	interface IPlugin {
 		void doing();
@@ -40,9 +48,42 @@ public abstract class ZUtils {
 	// Static methods //////////////////////////////////////
 	//
 
-	private static FactoryHander factory = new FactoryHanderDefault();
+	
+	private static Map<String, FactoryHander> factories;
+	static {
+		factories = new HashMap<String, FactoryHander>();
+		setFactory("");
+	}
+	
+	private static void setFactory(String context) {
+		try {
+			String factoryName;
+			if (context != null && context.isEmpty())
+				factoryName = System.getProperty("ZUtils.factory." + context);
+			else
+				factoryName = System.getProperty("ZUtils.factory");
+				
+			Class<?> factoryClass = Class.forName(factoryName);
+			factories.put(context, (FactoryHander) factoryClass.newInstance());
+			
+		} catch (Exception e) {
+			factories.put(context, new FactoryHanderDefault()); //TODO: Refatorar
+		}
+	}
+	
+	private static FactoryHander getFactory(String context) {
+		if (!factories.containsKey(context))
+			setFactory(context);
+		
+		return factories.get(context);
+	}
+	
 	public static FactoryHander factory() {
-		return factory;
+		return getFactory("");
+	}
+	
+	public static FactoryHander factory(String context) {
+		return getFactory(context);
 	}
 	
 	// http://www.javacodegeeks.com/2011/04/java-generics-quick-tutorial.html
@@ -57,9 +98,8 @@ public abstract class ZUtils {
 	}
 
 	public static ZUtils from(Object... objects) {
-		ZUtils instance = new ZutilsDefault(objects);
-		
-		return instance;
+		currentInstance = new ZutilsDefault(objects); //TODO: Refatorar
+		return currentInstance;
 	}
 	
 	public static ConversionHandler convert(Object... objects) {
@@ -111,6 +151,8 @@ public abstract class ZUtils {
 	public abstract Enumeration<?> enumerator();
 	
 	public abstract ZUtils each(Function function);
+	
+	public abstract ZUtils filter(Function function);
 	
 	public abstract ConversionHandler convert();
 	
