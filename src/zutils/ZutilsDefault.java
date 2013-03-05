@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import zutils.core.ConversionHandler;
@@ -21,7 +22,7 @@ class ZutilsDefault extends ZUtils {
 	// Constructor //////////////////////////////////////////
 	//
 	public ZutilsDefault(Object[] elements) {
-		this.elements = Arrays.asList(elements);
+		this.elements = new LinkedList<Object>(Arrays.asList(elements));
 	}
 
 	//
@@ -70,6 +71,25 @@ class ZutilsDefault extends ZUtils {
 		return this;
 	}
 
+	@Override
+	public ZUtils filter(Function function) {
+		if (function != null && !this.elements.isEmpty()) {
+			int counter = 0;
+			Iterator<?> it = iterator();
+			
+			while (it.hasNext()) {
+				function.params.set(it.next());
+				function.params.set("index", counter++);
+				function.run();
+				
+				boolean found = function.results.get();
+				if (!found)
+					it.remove();
+			}
+		}
+		return this;
+	}
+	
 	@Override
 	public boolean has(Object object) {
 		return elements.contains(object);

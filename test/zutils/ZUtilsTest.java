@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
 import org.junit.Test;
 
 import zutils.ZUtils.Plugin;
+import zutils.core.FactoryHander;
 import zutils.core.LogHandler;
 
 public class ZUtilsTest {
@@ -48,6 +50,11 @@ public class ZUtilsTest {
 		});
 	}
 	
+	@Test
+	public void deveriaObterInstanciaCorrente() {
+		ZUtils zutils = ZUtils.from("");
+		assertEquals(zutils, ZUtils.current());
+	}
 	
 	@Test
 	public void deveriaTerObjeto() {
@@ -88,6 +95,24 @@ public class ZUtilsTest {
 	@Test
 	public void deveriaCriarUmObjetoRegistradoNaFabricaComParametros() {
 		assertNotNull(ZUtils.factory().register(Date.class, java.sql.Date.class).create(Date.class, 8, 8, 2008));
+	}
+	
+	@Test
+	public void deveriaCriarUmObjetoRegistradoNaFabricaPorContexto() {
+		String context = "";
+		assertNotNull(ZUtils.factory(context).register(Calendar.class, GregorianCalendar.class).create(Calendar.class));
+	}
+	
+	@Test
+	public void deveriaCriarUmObjetoRegistradoNaFabricaCustomizada() {
+		System.setProperty("ZUtils.factory", "zutils.core.defaults.FactoryHanderDefault");
+		assertNotNull(ZUtils.factory().register(Calendar.class, GregorianCalendar.class).create(Calendar.class));
+	}
+	
+	@Test
+	public void deveriaCriarUmObjetoRegistradoNaFabricaCustomizadaComContexto() {
+		System.setProperty("ZUtils.factory.test", "zutils.core.defaults.FactoryHanderDefault");
+		assertNotNull(ZUtils.factory("test").register(Calendar.class, GregorianCalendar.class).create(Calendar.class));
 	}
 	
 	@Test
@@ -212,6 +237,19 @@ public class ZUtilsTest {
 				ZUtils.log("index[", params.get("index"), "] = ", params.get());
 			}
 		});
+	}
+	
+	@Test
+	public void deveriaExecutarFiltro() {
+		boolean found = ZUtils.from(1, 2, 3, 4).filter(new Function() {
+			public void run() {
+				int n = params.get();
+				results.set(n > 2);
+			}
+		}).contains(1);
+		
+		assertTrue(!found);
+		assertTrue(!ZUtils.current().contains(2));
 	}
 	
 	@Test
