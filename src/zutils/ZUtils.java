@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import zutils.core.CommandHandler;
 import zutils.core.ConversionHandler;
 import zutils.core.EventHandler;
 import zutils.core.ExceptionHandler;
@@ -124,6 +125,10 @@ public abstract class ZUtils {
 	
 	public static EventHandler events() {
 		return factory().create(EventHandler.class);
+	}
+	
+	public static CommandHandler commands() {
+		return factory().create(CommandHandler.class);
 	}
 	
 	public static ThreadHandler theads() {

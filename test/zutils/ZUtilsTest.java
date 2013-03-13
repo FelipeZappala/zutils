@@ -301,4 +301,16 @@ public class ZUtilsTest {
 	}
 	*/
 	
+	@Test
+	public void deveriaCriarCommando() {
+		List<String> results = setupLogger();
+		
+		ZUtils.commands().remove("Test").add("Test", new Function() {
+			public void run() {
+				ZUtils.log("Rodando commando: ", params.get(), " - ", params.get(0));
+			}
+		}).execute("Test", "bla");
+				
+		assertTrue(results.contains("Rodando commando: Test - bla"));
+	}
 }
