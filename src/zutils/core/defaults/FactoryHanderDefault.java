@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import zutils.core.CommandHandler;
 import zutils.core.ConversionHandler;
 import zutils.core.EventHandler;
 import zutils.core.FactoryHander;
@@ -24,6 +25,7 @@ public final class FactoryHanderDefault implements FactoryHander {
 		register(LogHandler.class, LogHandlerDefault.class);
 		register(EventHandler.class, EventHandlerDefault.class);
 		register(ThreadHandler.class, ThreadHandlerDefault.class);
+		register(CommandHandler.class, CommandHandlerDefault.class);
 	}
 	
 	
