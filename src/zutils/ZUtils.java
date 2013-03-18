@@ -99,7 +99,7 @@ public abstract class ZUtils {
 	}
 
 	public static ZUtils from(Object... objects) {
-		currentInstance = new ZutilsDefault(objects); //TODO: Refatorar
+		currentInstance = new ZUtilsDefault(objects); //TODO: Refatorar
 		return currentInstance;
 	}
 	
@@ -154,6 +154,10 @@ public abstract class ZUtils {
 	public abstract Iterator<?> iterator();
 	
 	public abstract Enumeration<?> enumerator();
+	
+	public abstract <T> T first();
+	
+	public abstract <T> T last();
 	
 	public abstract ZUtils each(Function function);
 	

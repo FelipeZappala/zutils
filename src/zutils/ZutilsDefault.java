@@ -10,7 +10,7 @@ import java.util.List;
 import zutils.core.ConversionHandler;
 import zutils.core.LogHandler;
 
-class ZutilsDefault extends ZUtils {
+class ZUtilsDefault extends ZUtils {
 
 	//
 	// Attributes //////////////////////////////////////////
@@ -21,7 +21,7 @@ class ZutilsDefault extends ZUtils {
 	//
 	// Constructor //////////////////////////////////////////
 	//
-	public ZutilsDefault(Object[] elements) {
+	public ZUtilsDefault(Object[] elements) {
 		this.elements = new LinkedList<Object>(Arrays.asList(elements));
 	}
 
@@ -113,6 +113,23 @@ class ZutilsDefault extends ZUtils {
 	@Override
 	public boolean contains(Object object) {
 		return has(object);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> T first() {
+		if (!elements.isEmpty())
+			return (T) elements.get(0);
+		return null;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> T last() {
+		if (!elements.isEmpty())
+			return (T) elements.get(elements.size() -1);
+		
+		return null;
 	}
 
 }

@@ -313,4 +313,21 @@ public class ZUtilsTest {
 				
 		assertTrue(results.contains("Rodando commando: Test - bla"));
 	}
+	
+	@Test
+	public void deveriaRetornarPrimeiroElemento() {
+		assertEquals(1, ZUtils.from(1, 2, 3).first());
+	}
+	
+	@Test
+	public void deveriaRetornarUltimoElemento() {
+		assertEquals(3, ZUtils.from(1, 2, 3).last());
+	}
+	
+	@Test
+	public void deveriaNaoFalarPrimeiroUltimoElemento() {
+		assertEquals(null, ZUtils.from().first());
+		assertEquals(null, ZUtils.from().last());
+	}
+	
 }
