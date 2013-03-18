@@ -14,7 +14,6 @@ import zutils.core.FactoryHander;
 import zutils.core.LogHandler;
 import zutils.core.ThreadHandler;
 import zutils.core.defaults.FactoryHanderDefault;
-import zutils.core.exceptions.ZUtilsArgumentException;
 
 public abstract class ZUtils {
 
@@ -195,6 +194,10 @@ public abstract class ZUtils {
 	public abstract <T> T sum();
 	
 	public abstract <T> T average();
+	
+	public abstract <T> T maximum();
+	
+	public abstract <T> T minimum();
 	
 	public abstract ZUtils each(Function function);
 	

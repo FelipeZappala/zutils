@@ -2,10 +2,10 @@ package zutils.support;
 
 public class IntegerSequence implements Sequence<Integer> {
 
-	private int current;
-	private int start;
-	private int end;
-	private int step;
+	private Integer current;
+	private Integer start;
+	private Integer end;
+	private Integer step;
 	
 	public IntegerSequence() {
 		init(0, 10);
@@ -22,16 +22,15 @@ public class IntegerSequence implements Sequence<Integer> {
 	}
 
 	public boolean hasNext() {
-		return current < end;
+		return current == null || current < end;
 	}
 
 	public Integer next() {
 		if (hasNext()) {
-			if (current == 0)
+			if (current == null) {
 				return current = start;
-			
+			}
 			return current = current + step;
-				
 		}
 		return null;
 	}

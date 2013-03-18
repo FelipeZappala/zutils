@@ -2,14 +2,15 @@ package zutils;
 
 import java.math.BigDecimal;
 
+import zutils.support.FloatSequence;
 import zutils.support.IntegerSequence;
 import zutils.support.Sequence;
 
 public class Test {
 
 	public static void main(String[] args) {
-		Sequence<Integer> seq = new IntegerSequence();
-		seq.init(4, 16, 4);
+		Sequence<Float> seq = new FloatSequence();
+		seq.init(-4f, 16f, 1f);
 		
 		while (seq.hasNext()) {
 			System.out.println(seq.next());
@@ -17,7 +18,6 @@ public class Test {
 		}
 		System.out.println(seq.next()  + " - " + seq.current() );
 		System.out.println(seq.next()  + " - " + seq.current() );
-		
 	}
 	
 	public static <T> T cast(Class<T> c, Object o) {
