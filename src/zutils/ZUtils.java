@@ -1,5 +1,6 @@
 package zutils;
 
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,6 +14,7 @@ import zutils.core.FactoryHander;
 import zutils.core.LogHandler;
 import zutils.core.ThreadHandler;
 import zutils.core.defaults.FactoryHanderDefault;
+import zutils.core.exceptions.ZUtilsArgumentException;
 
 public abstract class ZUtils {
 
@@ -103,6 +105,21 @@ public abstract class ZUtils {
 		return currentInstance;
 	}
 	
+	public static ZUtils range(int start, int end) {
+		return null;
+	}
+	
+	interface Sequence<T> {
+		void init(T start, T end);
+		void start(T t);
+		void end(T t);
+		T next();
+	}
+	
+	public static <T> ZUtils range(Sequence<T> sequence) {
+		return null;
+	}
+	
 	public static ConversionHandler convert(Object... objects) {
 		return factory().create(ConversionHandler.class).elements(objects);
 	}
@@ -145,11 +162,27 @@ public abstract class ZUtils {
 	
 	public abstract boolean isEmpty(); 
 	
-	public abstract int length();
-	
 	public abstract boolean has(Object object);
 	
 	public abstract boolean contains(Object object);
+	
+	public abstract int length();
+	
+	public abstract int size();
+	
+	public abstract int count();
+	
+	public abstract <T> T at(int index);
+	
+	public abstract <T> ZUtils at(int index, Object element);
+
+	public abstract <T> T get(int index);
+
+	public abstract <T> ZUtils set(int index, Object element);
+	
+	public abstract ZUtils add(Object element);
+
+	public abstract ZUtils remove(Object element);
 
 	public abstract Iterator<?> iterator();
 	
@@ -158,6 +191,10 @@ public abstract class ZUtils {
 	public abstract <T> T first();
 	
 	public abstract <T> T last();
+	
+	public abstract <T> T sum();
+	
+	public abstract <T> T average();
 	
 	public abstract ZUtils each(Function function);
 	
@@ -168,5 +205,22 @@ public abstract class ZUtils {
 	public abstract ZUtils log();
 	
 	public abstract ZUtils log(LogHandler.Level level);
+	
+	// Joins
+	
+	public abstract ZUtils join(ZUtils elements);
+	
+	public abstract ZUtils join(Iterator<?> elements);
+	
+	public abstract ZUtils join(Collection<?> elements);
+	
+	public abstract ZUtils join(Object... elements);
 		
+	public abstract ZUtils concat(ZUtils elements);
+	
+	public abstract ZUtils concat(Iterator<?> elements);
+	
+	public abstract ZUtils concat(Collection<?> elements);
+	
+	public abstract ZUtils concat(Object... elements);
 }

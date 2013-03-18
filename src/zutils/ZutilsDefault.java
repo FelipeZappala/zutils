@@ -1,6 +1,7 @@
 package zutils;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -129,6 +130,114 @@ class ZUtilsDefault extends ZUtils {
 		if (!elements.isEmpty())
 			return (T) elements.get(elements.size() -1);
 		
+		return null;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public <T> T at(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> ZUtils at(int index, Object element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> T get(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> ZUtils set(int index, Object element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils add(Object element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils remove(Object element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> T sum() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> T average() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils join(ZUtils elements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils join(Iterator<?> elements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils join(Collection<?> elements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils join(Object... elements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils concat(ZUtils elements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils concat(Iterator<?> elements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils concat(Collection<?> elements) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ZUtils concat(Object... elements) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

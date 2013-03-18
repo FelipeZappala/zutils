@@ -1,18 +1,18 @@
 package zutils.core.exceptions;
 
-public class ZutilsWarningException extends ZUtilsException {
+public class ZUtilsWarningException extends ZUtilsException {
 
 	private static final long serialVersionUID = -4700710074525304046L;
 
-	public ZutilsWarningException(String message) {
+	public ZUtilsWarningException(String message) {
 		super(message);
 	}
 
-	public ZutilsWarningException(Throwable cause) {
+	public ZUtilsWarningException(Throwable cause) {
 		super(cause);
 	}
 	
-	public ZutilsWarningException(String message, Throwable cause) {
+	public ZUtilsWarningException(String message, Throwable cause) {
 		super(message, cause);
 	}
 	
